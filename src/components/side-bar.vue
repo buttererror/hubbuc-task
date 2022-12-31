@@ -2,15 +2,12 @@
   <v-navigation-drawer app>
     <!-- -->
   </v-navigation-drawer>
-
 </template>
 
 <script>
 export default {
-  name: "side-bar"
+  name: "side-bar",
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

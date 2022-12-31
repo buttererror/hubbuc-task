@@ -6,10 +6,8 @@
 
 <script>
 export default {
-  name: "app-header"
+  name: "app-header",
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

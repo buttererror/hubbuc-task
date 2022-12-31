@@ -6,10 +6,8 @@
 
 <script>
 export default {
-  name: "app-footer"
+  name: "app-footer",
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
