@@ -5,60 +5,39 @@
       <v-col v-for="column in columns" :key="column.id" :cols="column.cols">
         <v-list>
           <v-subheader>{{ column.title }}</v-subheader>
-          <draggable
-            v-for="item in column.list"
-            :key="item.id"
-            :list="column.list"
-            group="people"
-          >
-            <!--          <v-list-item-group color="primary">-->
-            <v-list-item>
+          <draggable :list="column.list" group="beers">
+            <v-list-item v-for="item in column.list" :key="item.id">
               <v-card class="mx-auto my-3 w-100" max-width="374">
                 <v-card-title>{{ item.name }}</v-card-title>
+                <v-card-text>
+                  <div class="my-4 text-subtitle-1">
+                    {{ item.brand }}
+                  </div>
+                  <div>
+                    {{ item.yeast }}
+                  </div>
+                </v-card-text>
 
-                <!--            <v-card-text>-->
-                <!--              <v-row align="center" class="mx-0">-->
-                <!--                <v-rating-->
-                <!--                  :value="4.5"-->
-                <!--                  color="amber"-->
-                <!--                  dense-->
-                <!--                  half-increments-->
-                <!--                  readonly-->
-                <!--                  size="14"-->
-                <!--                ></v-rating>-->
+                <v-divider class="mx-4"></v-divider>
 
-                <!--                <div class="grey--text ms-4">4.5 (413)</div>-->
-                <!--              </v-row>-->
+                <v-card-text>
+                  <v-chip-group
+                    active-class="deep-purple accent-4 white--text"
+                    column
+                  >
+                    <v-chip v-if="item.alchol"
+                      >alcohol: {{ item.alchol }}</v-chip
+                    >
 
-                <!--              <div class="my-4 text-subtitle-1">$ • Italian, Cafe</div>-->
+                    <!--                    <v-chip>brand: {{ item.brand }}</v-chip>-->
 
-                <!--              <div>-->
-                <!--                Small plates, salads & sandwiches - an intimate setting with 12-->
-                <!--                indoor seats plus patio seating.-->
-                <!--              </div>-->
-                <!--            </v-card-text>-->
+                    <v-chip v-if="item.hop">hop: {{ item.hop }}</v-chip>
 
-                <!--            <v-divider class="mx-4"></v-divider>-->
-
-                <!--            <v-card-title>Tonight's availability</v-card-title>-->
-
-                <!--            <v-card-text>-->
-                <!--              <v-chip-group-->
-                <!--                active-class="deep-purple accent-4 white--text"-->
-                <!--                column-->
-                <!--              >-->
-                <!--                <v-chip>5:30PM</v-chip>-->
-
-                <!--                <v-chip>7:30PM</v-chip>-->
-
-                <!--                <v-chip>8:00PM</v-chip>-->
-
-                <!--                <v-chip>9:00PM</v-chip>-->
-                <!--              </v-chip-group>-->
-                <!--            </v-card-text>-->
+                    <v-chip v-if="item.style">style: {{ item.style }}</v-chip>
+                  </v-chip-group>
+                </v-card-text>
               </v-card>
             </v-list-item>
-            <!--          </v-list-item-group>-->
           </draggable>
         </v-list>
       </v-col>
