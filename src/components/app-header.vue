@@ -1,5 +1,11 @@
 <template>
-  <v-app-bar app color="#fff" flat outlined extension-height="20">
+  <v-app-bar
+    app
+    :color="theme.isDark ? '#272727' : '#fff'"
+    flat
+    outlined
+    extension-height="20"
+  >
     <v-app-bar-nav-icon v-if="drawer === false" @click="drawer = !drawer">
     </v-app-bar-nav-icon>
     <v-spacer></v-spacer>
@@ -19,6 +25,11 @@
 <script>
 export default {
   name: "app-header",
+  inject: {
+    theme: {
+      default: { isDark: false },
+    },
+  },
   computed: {
     drawer: {
       get() {

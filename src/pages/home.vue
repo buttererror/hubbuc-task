@@ -10,7 +10,11 @@
             group="beers"
             style="min-height: 500px"
           >
-            <v-list-item v-for="item in column.list" :key="item.id">
+            <v-list-item
+              v-for="item in column.list"
+              :key="item.id"
+              class="my-2"
+            >
               <v-card class="mx-auto my-3 w-100" max-width="374">
                 <v-card-title>{{ item.name }}</v-card-title>
                 <v-card-text>

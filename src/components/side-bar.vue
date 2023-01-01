@@ -1,6 +1,11 @@
 <template>
   <v-navigation-drawer app v-model="drawer">
-    <v-app-bar color="#fff" flat outlined extension-height="20">
+    <v-app-bar
+      :color="theme.isDark ? '#272727' : '#fff'"
+      flat
+      outlined
+      extension-height="20"
+    >
       <div class="d-flex justify-space-between align-center w-100">
         <v-img
           alt="logo"
@@ -22,7 +27,7 @@
         <v-switch
           v-model="isDarkTheme"
           label="Dark mode"
-          color="black"
+          color="white"
         ></v-switch>
       </div>
     </template>
@@ -36,6 +41,11 @@ export default {
     return {
       isDarkTheme: false,
     };
+  },
+  inject: {
+    theme: {
+      default: { isDark: false },
+    },
   },
   computed: {
     drawer: {
