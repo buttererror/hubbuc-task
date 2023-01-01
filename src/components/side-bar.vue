@@ -18,7 +18,6 @@
       </template>
     </v-app-bar>
     <template slot="append">
-      <v-divider></v-divider>
       <div class="d-flex justify-center pa-2 text-center">
         <v-switch
           v-model="isDarkTheme"
