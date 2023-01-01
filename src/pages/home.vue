@@ -5,7 +5,11 @@
       <v-col v-for="column in columns" :key="column.id" :cols="column.cols">
         <v-list>
           <v-subheader>{{ column.title }}</v-subheader>
-          <draggable :list="column.list" group="beers">
+          <draggable
+            :list="column.list"
+            group="beers"
+            style="min-height: 500px"
+          >
             <v-list-item v-for="item in column.list" :key="item.id">
               <v-card class="mx-auto my-3 w-100" max-width="374">
                 <v-card-title>{{ item.name }}</v-card-title>
